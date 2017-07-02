@@ -1,33 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ToDoApp from './components/ToDoApp';
 
-const dummyData = ["x","q","a","m"];
+// const dummyData = [{ taskText: "Catch 'em all", completed: false },{ taskText: "Raichu", completed: true },{ taskText: "Gengar", completed: false },{ taskText: "Mewtwo", completed: true }];
 
-class ToDo extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
-  render() {
-    return (
-    <li><button>X</button>
-    {this.props.task}</li>
-  )
-  }
-}
-
-class ToDoList extends React.Component {
-  constructor(props) {
-    super(props);
-  };
-
-  render() {
-    return (
-        <ul>
-            {dummyData.map((item) => <ToDo task={item}/>)}
-        </ul>
-    )
-  }
-}
-
-ReactDOM.render(<ToDoList />, document.getElementById('root'));
+ReactDOM.render(<ToDoApp />, document.getElementById('root'));
