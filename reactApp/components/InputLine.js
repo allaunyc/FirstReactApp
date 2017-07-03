@@ -1,4 +1,5 @@
 import React from 'react';
+import ToDoApp from './ToDoApp';
 
 class InputLine extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class InputLine extends React.Component {
     return (
         <div>
           <input type="text" name="newTask" placeholder="New Task"></input>
-          <input type="submit" value="Add todo"></input>
+          <input type="submit" value="Add todo" onClick={() => this.props.submit("Task Test")}></input>
         </div>
     )
   }
