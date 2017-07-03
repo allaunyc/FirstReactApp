@@ -8,9 +8,11 @@ class ToDo extends React.Component {
 
   render() {
     return (
-    <li><button>X</button>
-    {this.props.completed ? <strike>{this.props.task}</strike> :this.props.task }
+      <div>
+    <li><button onClick={this.props.xClick}>X</button>
+    {this.props.completed ? <strike onClick={this.props.xToggle}>{this.props.task}</strike> :<span onClick={this.props.xToggle}>{this.props.task}</span>}
   </li>
+  </div>
   )
   }
 }

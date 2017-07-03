@@ -11,7 +11,6 @@ class ToDoApp extends React.Component {
     this.state = {
       todos: []
     }
-    // this.addTodo = this.addTodo.bind(this)
   }
 
   componentDidMount(){
@@ -25,16 +24,32 @@ class ToDoApp extends React.Component {
     tempArr.push({taskText: task, completeted: false})
     this.setState({
       todos: tempArr
-    })
+      })
+  }
+
+  removeTodo(index) {
+      let tempArr = this.state.todos;
+      tempArr.splice(index, 1)
+      this.setState({
+        todos: tempArr
+      })
+  }
+
+  toggleTodo(index) {
+      let tempArr = this.state.todos;
+      tempArr[index].completed = !tempArr[index].completed;
+      this.setState({
+        todos: tempArr
+      })
   }
 
   render() {
     return (
       <div>
       <InputLine submit={(task) => this.addTodo(task)}/>
-      <ToDoList todos={this.state.todos}/>
+      <ToDoList todos={this.state.todos} todoXClick={(index) => this.removeTodo(index)} todoXToggle={(index) => this.toggleTodo(index)}/>
     </div>
-    )
+      )
   };
 }
 
