@@ -1,5 +1,7 @@
 import express from 'express';
 import dbRoutes from './routes/databaseAccess.js';
+import mongoose from 'mongoose';
+
 const app = express();
 
 //This line makes the build folder publicly avaiable
