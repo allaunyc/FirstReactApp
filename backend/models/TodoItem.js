@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 
-const todoItemSchema = new mongoose.Schema({
+const Schema = mongoose.Schema;
+
+const todoItemSchema = new Schema({
   task: {
     type: String,
     required: true
@@ -11,6 +13,6 @@ const todoItemSchema = new mongoose.Schema({
   }
 });
 
-export TodoItem = mongoose.model("Todo", todoItemSchema);
+const TodoItem = mongoose.model("Todo", todoItemSchema);
 
 export default TodoItem;
